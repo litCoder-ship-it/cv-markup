@@ -9,7 +9,7 @@ function registerUser(event) {
 
     let users = JSON.parse(localStorage.getItem("users")) || [];
 
-    if (users.some(u => u.email === email)) {
+    if (users.some(ubong => ubong.email === email)) {
         msg.style.color = "red";
         msg.textContent = "Email already exists!";
         return;
@@ -19,21 +19,21 @@ function registerUser(event) {
     localStorage.setItem("users", JSON.stringify(users));
 
     msg.style.color = "green";
-    msg.textContent = "Registration successful! Redirecting to login...";
+    msg.textContent = "Registration successfull!";
 
     setTimeout(() => {
         returnLogin();
     }, 1200);
 }
 
-// Navigate to login page from register page
+// switching to login page from register page
 function returnLogin() {
-    window.location.href = "login.html"; // replace with your login page filename
+    window.location.href = "login.html"; 
 }
 
-// Navigate to register page from login page
+// Switching to register page from login page
 function returnRegister() {
-    window.location.href = "register.html"; // replace with your register page filename
+    window.location.href = "register.html"; 
 }
 
 // LOGIN USER
@@ -59,7 +59,7 @@ function login(event) {
         return;
     }
 
-    // Generate fake JWT token
+    // Generating JWT token
     const token = generateFakeJWT();
     localStorage.setItem("auth_token", token);
     localStorage.setItem("current_user", email);
@@ -68,13 +68,6 @@ function login(event) {
     msg.textContent = "Login successful! Redirecting...";
 
     setTimeout(() => {
-        window.location.href = "portfolio.html"; // replace with your profile page
+        window.location.href = "portfolio.html"; 
     }, 900);
-}
-
-// Generate a simple JWT-like random token
-function generateFakeJWT() {
-    const randomPart = () =>
-        btoa(String.fromCharCode(...crypto.getRandomValues(new Uint8Array(16))));
-    return `${randomPart()}.${randomPart()}.${randomPart()}`;
-}
+};
