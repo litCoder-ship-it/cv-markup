@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register</title>
+  <link rel="stylesheet" href="./dist/output.css">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body class="bg-gray-800 flex items-center justify-center h-screen">
+
+    <div id="profilePage" class="border-gray-200 max-w-80 bg-gradient-to-tr from-cyan-200 to-blue-300 rounded-xl p-14 shadow-2xl">
+        <h1 class="text-2xl text-cyan-700 font-bold text-center mb-8">Registration Form</h1>
+
+        <form id="regForm" onsubmit="registerUser(event)">
+
+        <label class="font-semibold text-cyan-700">Username:</label> <br>
+        <input type="username" id="regUsername" class="border-b border-gray-400 mb-4 w-full outline-0 placeholder-gray-400" required> <br>
+
+        <label class="text-cyan-700 font-semibold">Email:</label> <br>
+        <input type="email" id="regEmail" class="border-b border-gray-400 mb-4 w-full outline-0" required/> <br>
+
+          <label class="text-cyan-700 font-semibold">Password:</label> <br>
+          <input type="password" id="regPassword" class="border-b border-gray-400
+          mb-4 w-full outline-0 placeholder:bg-inherit" required/>
+
+          <button type="submit" class="bg-cyan-700 hover:bg-cyan-800 cursor-pointer text-white text-center rounded-2xl float-right 
+          font-semibold px-4">Sign in</button><br><br><br>
+        </form>
+          <p class="text-sm text-gray-500 font-semibold">Already have an account? 
+           <span onclick="returnLogin()" class="text-blue-600 float-right cursor-pointer">Login</span>
+        </p>
+        <p id="regError" class="text-red-600 text-lg"></p>
+      </div>
+          
+   <script src="profile.js"></script>
+</body>
+</html>
