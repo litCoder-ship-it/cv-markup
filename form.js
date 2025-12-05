@@ -7,7 +7,7 @@ function registerUser(event) {
     const password = document.getElementById("regPassword").value;
     const msg = document.getElementById("regError");
 
-    let users = JSON.parse(localStorage.getItem("users")) || [];
+    let users = JSON.parse(localStorage.getItem("users")) || []; // is it okay to delete the empty array []??
 
     if (users.some(ubong => ubong.email === email)) {
         msg.style.color = "red";
@@ -23,7 +23,7 @@ function registerUser(event) {
 
     setTimeout(() => {
         returnLogin();
-    }, 1200);
+    }, 1000);
 }
 
 // switching to login page from register page
@@ -55,7 +55,7 @@ function login(event) {
 
     if (user.password !== password) {
         msg.style.color = "red";
-        msg.textContent = "Wrong password!";
+        msg.textContent = "Incorrect password!";
         return;
     }
 
@@ -65,7 +65,7 @@ function login(event) {
     localStorage.setItem("current_user", email);
 
     msg.style.color = "green";
-    msg.textContent = "Login successful! Redirecting...";
+    msg.textContent = "Login successful!;
 
     setTimeout(() => {
         window.location.href = "portfolio.html"; 
